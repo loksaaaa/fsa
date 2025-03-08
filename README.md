@@ -1,4 +1,4 @@
-Zadanie od zákazníka
+## Zadanie od zákazníka
 
 Naša organizácia potrebuje interaktívnu študentskú pomôcku na precvičovanie správneho slovosledu v angličtine. Aplikácia bude ponúkať dva režimy:
 
