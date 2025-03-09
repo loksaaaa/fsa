@@ -18,3 +18,17 @@ Učiteľský režim: Učiteľ si uloží v systéme napríklad 5 preddefinovaný
 - **RQ08** Systém priebežne zobrazuje počet správne a nesprávne poskladaných viet.
 - **RQ09** Systém zobrazuje poradie otázky, napríklad 1/5, čím indikuje, ktorá z piatich viet sa práve precvičuje.
 - **RQ10** Systém umožní študentovi kedykoľvek sa vrátiť do hlavného menu pomocou tlačidla „Leave“.
+
+
+## Slovník pojmov
+
+| **Pojem**              | **Anglický názov** | **Definícia** |
+|------------------------|--------------------|---------------|
+| **Veta**               | Sentence           | Základná jednotka precvičovania, ktorú študent musí poskladať zo správneho poradia slov. |
+| **Učiteľský režim**    | Teacher Mode       | Režim, v ktorom učiteľ vytvára, upravuje a ukladá vety na precvičovanie. |
+| **Študentský režim**    | Student Mode       | Režim, v ktorom študent skladá rozhádzané slová do správneho poradia a získava spätnú väzbu. |
+| **Slová**              | Words              | Jednotlivé prvky vety, ktoré sú zobrazené v náhodnom poradí a majú byť usporiadané do správnej vety. |
+| **Hodnotenie**         | Evaluation         | Proces, ktorým systém kontroluje správnosť poskladaných viet a poskytuje študentovi spätnú väzbu. |
+| **Výsledné hodnotenie**| Final Score        | Súhrnné hodnotenie testu, ktoré zobrazuje počet správnych a nesprávnych viet. |
+| **Menu**               | Menu               | Hlavná obrazovka aplikácie, kde si používateľ vyberá medzi režimami Teacher a Student. |
+| **Pole**               | Field              | Miesto, kde sa zadáva alebo zobrazuje text, napr. pri tvorbe vety učiteľom alebo skladaní vety študentom. |
