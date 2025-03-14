@@ -1,0 +1,99 @@
+@startuml
+title Class Diagram - Slovosled
+
+!theme   vibrant
+
+' ===== Classes =====
+class User {
+  - id : Long
+  - name : String
+  - role : Role
+  + getId() : Long
+  + getName() : String
+  + getRole() : Role
+}
+
+class Teacher {
+  + createSentence(content : String) : Sentence
+}
+
+class Student {
+  + attemptSentence(sentence : Sentence, selectedOrder : String) : Attempt
+}
+
+class Sentence {
+  - id : Long
+  - content : String
+  + getContent() : String
+}
+
+class PracticeSession {
+  - id : Long
+  - correctAnswers : int
+  - wrongAnswers : int
+  + startSession() : void
+  + endSession() : void
+}
+
+class Attempt {
+  - id : Long
+  - selectedOrder : String
+  - isCorrect : boolean
+  + evaluate() : boolean
+}
+
+enum UserRole {
+  TEACHER
+  STUDENT
+}
+
+' ===== Repositories =====
+class UserRepository {
+  + create(user : User) : User
+  + read(id : Long) : User
+  + update(user : User) : void
+  + delete(id : Long) : void
+  + findByRole(role : Role) : List<User>
+}
+
+class SentenceRepository {
+  + create(sentence : Sentence) : Sentence
+  + read(id : Long) : Sentence
+  + update(sentence : Sentence) : void
+  + delete(id : Long) : void
+  + findByTeacherId(teacherId : Long) : List<Sentence>
+}
+
+class PracticeSessionRepository {
+  + create(session : PracticeSession) : PracticeSession
+  + read(id : Long) : PracticeSession
+  + update(session : PracticeSession) : void
+  + delete(id : Long) : void
+  + findByStudentId(studentId : Long) : List<PracticeSession>
+}
+
+class AttemptRepository {
+  + create(attempt : Attempt) : Attempt
+  + read(id : Long) : Attempt
+  + update(attempt : Attempt) : void
+  + delete(id : Long) : void
+  + findBySessionId(sessionId : Long) : List<Attempt>
+}
+
+' ===== Relationships =====
+User <|-- Teacher
+User <|-- Student
+Teacher "1" -- "0..5" Sentence : creates
+Student "1" -- "0..*" PracticeSession : performs
+PracticeSession "1" -- "1..*" Attempt : includes
+Attempt "1" -- "1" Sentence : targets
+PracticeSession "1" o-- "5" Sentence : uses
+User --> UserRole
+
+' Repositories association
+UserRepository ..> User
+SentenceRepository ..> Sentence
+PracticeSessionRepository ..> PracticeSession
+AttemptRepository ..> Attempt
+
+@enduml
